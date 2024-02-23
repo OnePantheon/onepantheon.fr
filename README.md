@@ -4,16 +4,18 @@ Site *"statique"* de l'association One Panthéon. Basé sur le site du [bde-fact
 
 ## Build Setup
 
+Au lieu d'utiliser npm, vous pouvez aussi utiliser yarn. N'essayez pas de le faire avec pnpm, ça ne fonctionnera pas (ça sent le vécu).
+
 ```bash
 # install dependencies
-$ pnpm install
+$ npm install
 
 # serve with hot reload at localhost:3000
-$ pnpm run dev
+$ npm run dev
 
 # build for production and launch server
-$ pnpm run build
-$ pnpm run start
+$ npm run build
+$ npm run start
 
 # generate static project
 $ pnpm run generate
