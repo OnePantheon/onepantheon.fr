@@ -24,7 +24,7 @@ export default Vue.extend({
       .limit(3)
       .where({ path: { $ne: "/index" } })
       .fetch()
-    ) as Array<IContentDocument>;
+    ) as unknown as Array<IContentDocument>;
   }
 });
 </script>

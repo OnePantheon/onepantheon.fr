@@ -60,7 +60,7 @@ export default Vue.extend({
     const [article] = (await $content({ deep: true })
       .where({ path: allowedPaths })
       .fetch()
-      ) as Array<IContentDocument>
+      ) as unknown as Array<IContentDocument>
 
     if (!article) {
       return error({ statusCode: 404, message: 'Article not found. Path : ' + path })
@@ -72,7 +72,7 @@ export default Vue.extend({
       .sortBy('createdAt', 'desc')
       .surround(article.path)
       .fetch()
-      ) as Array<IContentDocument>
+      ) as unknown as Array<IContentDocument>
 
     return {
       allArticles,
