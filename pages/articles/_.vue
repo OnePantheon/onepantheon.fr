@@ -90,10 +90,12 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-
+hr {
+  color: #EEEEEE;  
+}
 .nuxt-content {
   & .toc3 {
-	margin-left: 1rem;
+	  margin-left: 1rem;
   }
   & h2 {
     font-size: 2.56rem;

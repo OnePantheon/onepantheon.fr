@@ -6,7 +6,7 @@
           <icon>menu</icon>
         </a>
         <Nuxt-link to="/" class="logo-onep" tile="Retourner à l'accueil">
-          <img src="@/assets/logo.webp" alt="Logo One Panthéon">
+          <img src="@/assets/Logo_Light_Transparent.svg" alt="Logo One Panthéon">
         </Nuxt-link>
         <ul class="hide-on-med-and-down">
           <li v-for="link in links" :key="link.name">
@@ -139,9 +139,10 @@ nav {
   }
   & .logo-onep {
     align-self: start;
+    margin-right: 1rem;
     & img {
       display: block;
-      height: 82px;
+      height: 64px;
       width: auto;
     }
   }

@@ -34,19 +34,22 @@ export default {
           name: "Le bureau restreint",
           desc: "Le président représente le groupe tandis que le vice-président manage l'équipe. Quant aux autres rôles, ceux-ci sont assez explicites.",
           members: [
-            { picture: "placeholder-square.jpg", firstName: "X", surName: "X", caption: "Président" },
-            { picture: "placeholder-square.jpg", firstName: "X", surName: "X", caption: "Vice-Président" },
-            { picture: "placeholder-square.jpg", firstName: "X", surName: "X", caption: "Secrétaire" },
-            { picture: "placeholder-square.jpg", firstName: "X", surName: "X", caption: "Trésorier" }
+            { picture: "placeholder-square.png", firstName: "X", surName: "X", caption: "Président" },
+            { picture: "placeholder-square.png", firstName: "X", surName: "X", caption: "Vice-Président" },
+            { picture: "placeholder-square.png", firstName: "X", surName: "X", caption: "Secrétaire" },
+            { picture: "placeholder-square.png", firstName: "X", surName: "X", caption: "Trésorier" }
           ]
         },
         {
           name: "Le bureau étendu",
           desc: "X",
           members: [
-            { picture: "placeholder-square.jpg", firstName: "X", surName: "X", caption: "Responsable X" },
-            { picture: "placeholder-square.jpg", firstName: "X", surName: "X", caption: "Responsable X" },
-            { picture: "placeholder-square.jpg", firstName: "X", surName: "X", caption: "Responsable X" }
+            { picture: "placeholder-square.png", firstName: "X", surName: "X", caption: "Responsable X" },
+            { picture: "placeholder-square.png", firstName: "X", surName: "X", caption: "Responsable X" },
+            { picture: "placeholder-square.png", firstName: "X", surName: "X", caption: "Responsable X" },
+            { picture: "placeholder-square.png", firstName: "X", surName: "X", caption: "Responsable X" },
+            { picture: "placeholder-square.png", firstName: "X", surName: "X", caption: "Responsable X" },
+            { picture: "placeholder-square.png", firstName: "X", surName: "X", caption: "Responsable X" }
           ]
         },
       ]
@@ -76,16 +79,15 @@ export default {
 </script>
 
 <style lang="css">
+#team {
+  margin-top: 2em;
+}
 #team img {
   width: 10em;
   height: auto;
 
   max-width: 100%;
   border-radius: 50%;
-  cursor: zoom-in;
-}
-#team img.active {
-  cursor: zoom-out;
 }
 .person_card {
   margin: 0.5em;
