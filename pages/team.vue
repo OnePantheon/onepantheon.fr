@@ -51,7 +51,7 @@ export default {
             { picture: "placeholder-square.png", firstName: "X", surName: "X", caption: "Responsable X" },
             { picture: "placeholder-square.png", firstName: "X", surName: "X", caption: "Responsable X" }
           ]
-        },
+        }
       ]
     };
   },

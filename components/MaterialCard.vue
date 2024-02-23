@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: "Card",
+  name: "MaterialCard",
   props: ["title", "date", "linkType", "linkName", "linkURL"]
 }
 </script>

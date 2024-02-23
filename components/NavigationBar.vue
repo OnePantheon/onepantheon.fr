@@ -3,7 +3,7 @@
     <div v-if="! isHidden" id="nav" class="z-depth-1">
       <nav class="container">
         <a href="#" class="sidenavBtn" @click="toggleMobileNav()">
-          <icon>menu</icon>
+          <MaterialIcon>menu</MaterialIcon>
         </a>
         <Nuxt-link to="/" class="logo-onep" tile="Retourner à l'accueil">
           <img src="@/assets/Logo_Light_Transparent.svg" alt="Logo One Panthéon">
@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: 'Navbar',
+  name: 'NavigationBar',
   props: {
     container: { type: Boolean }
   },

@@ -8,7 +8,11 @@
           <article-searchbar />
         </client-only>
         <br>
-        <article-nav v-if="allArticles" :all-articles="allArticles" :current-dir="article.dir" />
+        <article-nav
+          v-if="allArticles"
+          :all-articles="allArticles"
+          :current-dir="article.dir"
+        />
       </div>
 
       <div v-if="article" id="articleContent" class="col m7">
@@ -34,79 +38,94 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { IContentDocument } from '@nuxt/content/types/content'
+import Vue from "vue";
+import { IContentDocument } from "@nuxt/content/types/content";
 
 export default Vue.extend({
   transition (to, from) {
     if (!from) {
-      return 'scale'
+      return "scale";
     }
 
-    if (from.fullPath.startsWith("/articles") && to.fullPath.startsWith("/articles")) {
-      return 'fade';
+    if (
+      from.fullPath.startsWith("/articles") &&
+      to.fullPath.startsWith("/articles")
+    ) {
+      return "fade";
     } else {
-      return 'scale';
+      return "scale";
     }
   },
   async asyncData ({ $content, params, error }) {
-    const path = `/${params.pathMatch || ''}`
-    const allowedPaths = { $in: [path, `${path}/index`, `${path}index`, `${path}/0`, `${path}0`] };
+    const path = `/${params.pathMatch || ""}`;
+    const allowedPaths = {
+      $in: [path, `${path}/index`, `${path}index`, `${path}/0`, `${path}0`]
+    };
 
     const allArticles = await $content({ deep: true })
-      .only(['title', 'description', 'slug', 'path', 'dir', 'path', 'createdAt', 'updatedAt'])
+      .only([
+        "title",
+        "description",
+        "slug",
+        "path",
+        "dir",
+        "path",
+        "createdAt",
+        "updatedAt"
+      ])
       .fetch();
 
     const [article] = (await $content({ deep: true })
       .where({ path: allowedPaths })
-      .fetch()
-      ) as unknown as Array<IContentDocument>
+      .fetch()) as unknown as Array<IContentDocument>;
 
     if (!article) {
-      return error({ statusCode: 404, message: 'Article not found. Path : ' + path })
+      return error({
+        statusCode: 404,
+        message: "Article not found. Path : " + path
+      });
     }
 
     const [prev, next] = (await $content({ deep: true })
-      .only(['title', 'path'])
+      .only(["title", "path"])
       .where({ dir: article.dir })
-      .sortBy('createdAt', 'desc')
+      .sortBy("createdAt", "desc")
       .surround(article.path)
-      .fetch()
-      ) as unknown as Array<IContentDocument>
+      .fetch()) as unknown as Array<IContentDocument>;
 
     return {
       allArticles,
       article,
       prev,
       next
-    }
+    };
   },
   data () {
     return {
       allArticles: null
-    }
+    };
   }
 });
 </script>
 
 <style lang="scss">
 hr {
-  color: #EEEEEE;  
+  color: #eeeeee;
 }
 .nuxt-content {
   & .toc3 {
-	  margin-left: 1rem;
+    margin-left: 1rem;
   }
   & h2 {
     font-size: 2.56rem;
   }
   & h3 {
-	font-size: 2rem;
+    font-size: 2rem;
   }
   & aside {
-  	background: #f1f1ef;
-	padding: 0.1rem 1rem;
-	border-radius: 8px;
+    background: #f1f1ef;
+    padding: 0.1rem 1rem;
+    border-radius: 8px;
   }
   & strong {
     font-weight: bold;

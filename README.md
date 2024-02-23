@@ -18,7 +18,7 @@ $ npm run build
 $ npm run start
 
 # generate static project
-$ pnpm run generate
+$ npm run generate
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).

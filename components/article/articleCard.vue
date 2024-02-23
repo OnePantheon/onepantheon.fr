@@ -1,7 +1,7 @@
 <template>
-  <card :date="articleInfo.createdAt" link-name="Lire l'article" link-type="article" :link-u-r-l="articleInfo.path" :title="articleInfo.title">
+  <MaterialCard :date="articleInfo.createdAt" link-name="Lire l'article" link-type="article" :link-u-r-l="articleInfo.path" :title="articleInfo.title">
     {{ articleInfo.description || "erreur" }}
-  </card>
+  </MaterialCard>
 </template>
 
 <script lang="ts">
